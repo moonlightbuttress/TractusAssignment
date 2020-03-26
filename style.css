@@ -1,0 +1,12 @@
+h1{
+    border: 1px solid black;}
+div{
+    width: 250px;
+    border: 2.5px solid black;
+    padding: 20px;
+    text-align: center;
+    margin: 15px;
+}
+#generate{
+    align-content: center;
+}
