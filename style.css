@@ -1,12 +1,35 @@
-h1{
-    border: 1px solid black;}
-div{
+body{
+    background-color: lightslategray;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    align-content: center;
+}
+label{
+    font-size: large;
+}
+#joke{
+    height: 150px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10%;
+    font-size: 2vw;
+    align-content: center;
+    padding: 20px 20px 40px;
+}
+#jokeContainer{
+    height: 250px;
     width: 250px;
-    border: 2.5px solid black;
+    border: 3px solid black;
     padding: 20px;
     text-align: center;
     margin: 15px;
+    border-radius: 10%;
+    align-content: center;
 }
 #generate{
     align-content: center;
+}
+
+button{
+
 }

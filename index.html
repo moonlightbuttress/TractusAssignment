@@ -1,26 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href = "style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Tractus Assignment</title>
 </head>
 <body>
-
+<div class="jumbotron text-center">
     <label for="nJokes">Enter a number of jokes between 1 and 10</label>
-    <input type="number" id = "nJokes" ><br><br>
-    <button type="button" id = "submit" >Submit</button>
+    <br>
+    <input type="number" id = "nJokes" >
+    <br><br>
+    <button type="button" class="btn btn-primary" id = "submit" >Submit</button>
+</div>
     <p>
-        <div style="display: none">
-                <h1 id="joke">CLICK FOR A NEW JOKE</h1>
-                <button type = "button" id = "generate"> Generate Joke</button>
+        <div style="display: none" class = col-sm-6" id = "jokeContainer">
+                <h1 id="joke">Click the button to see a new joke!</h1>
+                <button type = "button" class="btn btn-primary" id = "generate"> Generate Joke</button>
         </div>
     </p>
 
 <script>
-    let jokes = [];
-
     $(document).ready(function() {
         let numJokes = 0;
         let p = $("p");
@@ -30,10 +34,10 @@
             numJokes = $("#nJokes").val();
             if (numJokes > 10){
                 alert("Too many jokes!")
-            }else if(numJokes < 0){
+            }else if(numJokes <= 0){
                 alert("Too few jokes!")
             }else {
-                let base = $("div");
+                let base = $("#jokeContainer");
                 for (let i = 0; i < numJokes; ++i){
                     let copy = base.clone();
                     $("p").append(copy);
@@ -43,15 +47,14 @@
                             let joke = copy.children("#joke");
                             let button = copy.children("#generate");
                             joke.text(data.joke);
-                            button.text("Click for another joke!")
+                            button.text("Click for another joke!");
+                            joke.css("font-size", "1.2vw");
                         });
                     });
                     copy.css("display", "inline-block");
                 }
             }
-
         })
-
     });
 
 </script>
