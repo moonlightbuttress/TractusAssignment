@@ -34,8 +34,8 @@
                 alert("Too few jokes!")
             }else {
                 let base = $("div");
-                let copy = base.clone();
                 for (let i = 0; i < numJokes; ++i){
+                    let copy = base.clone();
                     $("p").append(copy);
                     copy.children($("#generate")).on("click", function () {
                         console.log("clicked");
