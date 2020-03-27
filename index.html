@@ -40,8 +40,10 @@
                     copy.children($("#generate")).on("click", function () {
                         console.log("clicked");
                         $.getJSON("https://icanhazdadjoke.com/", "USER-AGENT: LEARNING JQUERY", function (data) {
-                            let joke = copy.children($("#joke"));
+                            let joke = copy.children("#joke");
+                            let button = copy.children("#generate");
                             joke.text(data.joke);
+                            button.text("Click for another joke!")
                         });
                     });
                     copy.css("display", "inline-block");
